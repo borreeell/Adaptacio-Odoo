@@ -7,5 +7,5 @@ Per a qualsevol dubte o suggeriment, pots contactar amb mi a través del meu per
 ____
 ## Enllaços d'interès relacionats
 [Repo de Odoo](https://github.com/odoo/odoo) <br/>
-[Documentacio oficial per a desenvolupadors de Odoo](https://www.odoo.com/documentation/18.0/developer.html)
+[Documentacio oficial per a desenvolupadors de Odoo](https://www.odoo.com/documentation/18.0/developer.html) <br/>
 [Tutorial per la instalacio de Odoo](https://www.odoo.com/documentation/18.0/developer/tutorials/setup_guide.html)
