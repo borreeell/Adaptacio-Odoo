@@ -1,0 +1,55 @@
+<odoo>
+  <data>
+    <!-- Definicio de la vista de llista per al model -->
+    <record model="ir.ui.view" id="gestio_clients.list"> 
+      <field name="name">gestio_clients list</field>  <!-- Nom de la vista -->
+      <field name="model">gestio_clients.gestio_clients</field> <!-- Nom del model pel qual definim la vista -->
+      <field name="arch" type="xml"> <!-- Tipus de vista -->
+        <list>
+          <!-- Camps a mostrar -->
+          <field name="id_client"/> 
+          <field name="nom_client"/>
+          <field name="telefon"/>
+          <field name="mail"/>
+        </list>
+      </field>
+    </record>
+
+    <!-- Defincio de l'accio de finestra per el model -->
+    <record model="ir.actions.act_window" id="gestio_clients.action_window"> 
+      <field name="name">gestio_clients window</field> <!-- Nom de l'accio -->
+      <field name="res_model">gestio_clients.gestio_clients</field> <!-- Model al qual s'aplica l'accio -->
+      <field name="view_mode">list,form</field> <!-- Modes de vista -->
+    </record>
+
+    <!-- Definicio de l'accio de del servidor per el model -->
+    <record model="ir.actions.server" id="gestio_clients.action_server">
+      <field name="name">gestio_clients server</field> <!-- Nom de l'accio -->
+      <field name="model_id" ref="model_gestio_clients_gestio_clients"/> <!-- Model al qual s'aplica l'accio -->
+      <field name="state">code</field> <!-- Tipus d'accio -->
+      <!-- Codi de l'accio -->
+      <field name="code"> 
+        action = { 
+          "type": "ir.actions.act_window", <!-- Tipus d'accio: obrir una finestra -->
+          "view_mode": "list,form", <!-- Modes de vista disponibles per l'accio -->
+          "res_model": "gestio_clients.gestio_clients", <!-- Model al qual s'aplica l'accio -->
+        }
+      </field>
+      <!-- Fi del codi de l'accio -->
+    </record>
+
+    <!-- Definicio del menu principal -->
+    <menuitem name="gestio_clients" id="gestio_clients.menu_root"/>
+
+    <!-- Definicio dels submenus -->
+    <menuitem name="Menu 1" id="gestio_clients.menu_1" parent="gestio_clients.menu_root"/>
+    <menuitem name="Menu 2" id="gestio_clients.menu_2" parent="gestio_clients.menu_root"/>
+
+    <!-- Definicio de les accions del submenu -->
+    <menuitem name="List" id="gestio_clients.menu_1_list" parent="gestio_clients.menu_1"
+              action="gestio_clients.action_window"/> <!-- Accio de finestra -->
+    <menuitem name="Server to list" id="gestio_clients" parent="gestio_clients.menu_2"
+              action="gestio_clients.action_server"/> <!-- Accio de servidor -->
+  </data>
+</odoo>
+
