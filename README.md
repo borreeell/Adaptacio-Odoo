@@ -1,0 +1,1 @@
+# Adaptacio-Odoo
