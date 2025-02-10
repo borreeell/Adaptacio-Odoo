@@ -26,11 +26,10 @@ class Albara(models.Model):
     articles_albara = fields.One2many('registre_albarans.articles_albara', 'albara_id', string="Articles")
 
     @api.model
-    def create(self, vals_list):
-        for vals in vals_list:
-            if vals.get('name', 'New') == 'New':
-                vals['name'] = self.env['ir.sequence'].next_by_code('registre_albarans.sequence') or '/'
-        return super(Albara, self).create(vals_list)
+    def create(self,vals):
+        if 'name' not in vals or not vals['name']:
+            vals['name'] = self.env['ir.sequence'].next_by_code('registre_albarans.sequence') or '/'
+        return super(Albara, self).create(vals)
     
 class ArticlesAlbara(models.Model):
     _name = 'registre_albarans.articles_albara'
