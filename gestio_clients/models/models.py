@@ -1,25 +1,3 @@
-# Module: gestio_clients
-# Descripcio: Aquest modul defineix els models per gestionar els clients individuals i empreses a Odoo.
-# Classes:
-#   GestioClients (Registre de les dades del client):
-#      - individual: Checkbox per marcar si el client es individual.
-#      - empresa: Checkbox per marcar si el client es una empresa.
-#      - id_client: Identificador unic per el client.
-#      - nom_client: Nom del client.
-#      - adreca: Adreça del client.
-#      - codi_postal: Codi postal de la localitat del client.
-#      - localitat: Localitat del client.
-#      - telefon: Telefon de contacte del client.
-#      - mail: Correu electronic del client.
-#      - nif: NIF del client.
-# Metodes:
-#   - create(self, vals):
-#       Crea un identificador unic per el client si no s'ha proporcionat.
-#   - _onchange_individual_empresa(self):
-#       Desmarca la contraria si una de les dues opcions esta marcada.
-
-
-
 from odoo import models, fields, api
 
 

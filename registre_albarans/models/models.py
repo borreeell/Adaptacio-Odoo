@@ -1,31 +1,5 @@
-# Module: registre_albarans
-# Descripcio: Aquest modul defineix els models per gestionar els albarans i els seus articles associats a Odoo.
-# Classes:
-#   Albara:
-#      Representa les dades de l'albara:
-#       - ID del client
-#       - ID de la reparacio (en cas de que sigui albara d'una reparacio)
-#       - Data de l'albara
-#      Metodes: 
-#       - create(self, vals):
-#           Sobreescriu el metode create per generar un nom sequencial per l'albara si no s'ha proporcionat.
-#    
-#   ArticlesAlbara:
-#      Representa les dades dels articles associats a l'albara:
-#       - ID de l'article 
-#       - Nom de l'article
-#       - Quantitat
-#       - Preu unitari
-#       - Preu subtotal
-#       - Percentatge d'IVA
-#       - Preu total
-#      Metodes:
-#       - _compute_preu_subtotal(self):
-#           Calcula el preu subtotal de l'article a partir de la quantitat i el preu unitari.
-#       - _compute_preu_total(self):
-#           Calcula el preu total de l'article a partir del preu subtotal i el percentatge d'IVA.
-
 from odoo import models, fields, api
+
 
 class Albara(models.Model):
     _name = 'registre_albarans.registre_albarans'
@@ -36,7 +10,6 @@ class Albara(models.Model):
         required=True,
         copy=False,
         readonly=True,
-        default=lambda self: ('New')
     )
     id_client = fields.Many2one(
         'gestio_clients.gestio_clients',
