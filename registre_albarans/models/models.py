@@ -7,7 +7,7 @@ class Albara(models.Model):
 
     name = fields.Char(
         string="Nº d'albara:",
-        required=True,
+        required=False,
         copy=False,
         readonly=True,
     )
@@ -26,8 +26,9 @@ class Albara(models.Model):
     articles_albara = fields.One2many('registre_albarans.articles_albara', 'albara_id', string="Articles")
 
     @api.model
-    def create(self,vals):
+    def create(self, vals):
         if 'name' not in vals or not vals['name']:
+            # Crida al metode next_by_code del model ir.sequence
             vals['name'] = self.env['ir.sequence'].next_by_code('registre_albarans.sequence') or '/'
         return super(Albara, self).create(vals)
     
@@ -53,5 +54,3 @@ class ArticlesAlbara(models.Model):
     def _compute_preu_total(self):
         for record in self:
             record.preu_total = record.preu_subtotal * (1 + record.percentatge_iva / 100)
-
-
