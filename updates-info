@@ -1,3 +1,6 @@
 Dins d'aquest arxiu s'hi afegiran les patch-notes del que es vagi actualitzant.
 
 Update 4/3/2025:
+1. S'ha afegit validacio per el camp NIF al modul de gestio_clients.
+2. S'han organitzat millor els directoris (eliminat arxius que sobraven).
+3. Preparacio del directori i arxius de codi per el modul de factures.
