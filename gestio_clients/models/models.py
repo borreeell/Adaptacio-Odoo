@@ -1,4 +1,6 @@
 from odoo import models, fields, api
+from odoo.exceptions import UserError
+import re
 
 
 class GestioClients(models.Model):
@@ -28,3 +30,15 @@ class GestioClients(models.Model):
     def _onchange_individual_empresa(self):
         self.individual = not (self.empresa) # Desmarca empresa si esta marcada
         self.empresa = not (self.individual) # Desmarca individual si esta marcada
+    
+    @api.constrains('nif', 'empresa', 'individual')
+    def _comprova_nif(self):
+        for record in self:
+            if record.empresa and record.nif:
+                if not re.match(r'^[A-Za-z]', record.nif):
+                    raise UserError("El NIF d'una empresa ha de començar amb una lletra")
+            elif record.individual and record.nif:
+                if not re.match(r'^[A-Za-z]$', record.nif):
+                    raise UserError("El NIF d'un particular ha d'acabar amb una lletra")
+
+    

@@ -1,0 +1,50 @@
+<odoo>
+  <data>
+
+    <!-- Definicio de la vista de form del modul -->
+    <!--
+      Soon
+    -->
+
+    <!-- Definicio de la vista en llista del modul -->
+    <!--
+      Soon
+    -->
+
+    <!-- Accio de finestra pel modul -->
+    <record model="ir.actions.act_window" id="factures.action_window">
+      <field name="name">factures window</field>
+      <field name="res_model">factures.factures</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+
+    <!-- Accio de server per el menu -->
+    <record model="ir.actions.server" id="factures.action_server">
+      <field name="name">factures server</field>
+      <field name="model_id" ref="model_factures_factures"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+
+    <!-- Item principal del menu -->
+    <menuitem name="factures" id="factures.menu_root"/>
+
+    <!-- Categories del menu -->
+    <menuitem name="Menu 1" id="factures.menu_1" parent="factures.menu_root"/>
+    <menuitem name="Menu 2" id="factures.menu_2" parent="factures.menu_root"/>
+
+    <!-- Accions del menu -->
+    <menuitem name="List" id="factures.menu_1_list" parent="factures.menu_1"
+              action="factures.action_window"/>
+    <menuitem name="Server to list" id="factures" parent="factures.menu_2"
+              action="factures.action_server"/>
+  </data>
+</odoo>

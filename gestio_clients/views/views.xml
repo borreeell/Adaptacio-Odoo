@@ -30,9 +30,9 @@
       <!-- Codi de l'accio -->
       <field name="code"> 
         action = { 
-          "type": "ir.actions.act_window", <!-- Tipus d'accio: obrir una finestra -->
-          "view_mode": "list,form", <!-- Modes de vista disponibles per l'accio -->
-          "res_model": "gestio_clients.gestio_clients", <!-- Model al qual s'aplica l'accio -->
+          "type": "ir.actions.act_window", # Tipus d'accio: obrir una finestra 
+          "view_mode": "list,form", # Modes de vista disponibles per l'accio 
+          "res_model": "gestio_clients.gestio_clients", # Model al qual s'aplica l'accio 
         }
       </field>
       <!-- Fi del codi de l'accio -->
