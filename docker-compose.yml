@@ -1,0 +1,21 @@
+# Arxiu docker per generar un entorn complet de odoo18 amb postgresql15
+
+version: '3'
+services:
+  odoo:
+    image: odoo:18.0
+    env_file: .env
+    depends_on:
+      - postgres
+    ports:
+      - "8069:8069"
+  postgres:
+    image: postgres:15
+    env_file: .env
+    volumes:
+      - db:/var/lib/postgresql/data/pgdata
+
+volumes:
+  data:
+  db:
+
