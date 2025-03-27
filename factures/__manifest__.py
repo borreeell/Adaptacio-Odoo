@@ -2,18 +2,23 @@
 {
     'name': "factures",
 
-    # Dependencies del modul
-    'depends': ['base', 'gestio_clients'],
+    # any module necessary for this one to work correctly
+    'depends': ['base'],
 
-    # Arxius carregats sempre
+    # always loaded
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml',
+        'views/templates.xml',
     ],
 
-    # Arxiu a carregar en mode demostracio
-    'data': [
+    # only loaded in demonstration mode
+    'demo': [
         'demo/demo.xml',
     ],
+
+    'installable': True,
+    'application': True,
+    'auto_install': True,
 }
 

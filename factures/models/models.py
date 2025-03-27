@@ -7,4 +7,6 @@ class factures(models.Model):
     _name = 'factures.factures'
     _description = 'factures.factures'
 
-    # Aqui es definiran els camps que tindra el modul
+    name = fields.Char(
+        string="Nº d'albara:"
+    )

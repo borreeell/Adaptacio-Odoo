@@ -12,3 +12,4 @@ class modul_tests(models.Model):
     value2 = fields.Float(compute="_value_pc", store=True)
     description = fields.Text()
     field1 = fields.Char(string="field")
+    select = fields.Selection([('a', 'A'), ('b', 'B')], string="A")

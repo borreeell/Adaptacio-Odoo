@@ -22,34 +22,9 @@
             <group>
               <field name="name"/>
               <field name="value"/>
+              <field name="select"/>
             </group>
-            <!-- add notebook with a tab -->
-            <notebook>
-              <page string="Options">
-                <group>
-                  <button name="boto_test" string="Boto" type="object"/>
-                </group>
-              </page>
-            </notebook>
           </sheet>
-        </form>
-      </field>
-    </record>
-
-    <!-- modal view -->
-    <record model="ir.ui.view" id="test_form_views">
-      <field name="name">modal test</field>
-      <field name="model">modul_tests.modul_tests</field>
-      <field name="arch" type="xml">
-        <form string="test">
-          <group>
-            <field name="name"/>
-          </group>
-          <footer>
-            <button string="Guardar i tancar" type="object" class="btn-guardar" name="action_save_close"/>
-            <button string="Guardar i nou" type="object" class="btn-guardar-nou" name="action_save_new"/>
-            <button string="Cancelar" class="btn-cancelar" special="cancel"/>
-          </footer>
         </form>
       </field>
     </record>

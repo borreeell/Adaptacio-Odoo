@@ -15,13 +15,12 @@ class Albara(models.Model):
         'gestio_clients.gestio_clients',
         string="ID del client",
     )
-    id_reparation = fields.Char(
+    id_reparacio = fields.Char(
         string="ID de la reparacio",
     )
-    date = fields.Date(
+    data = fields.Date(
         string="Data albara",
         default=fields.Date.context_today,
-        required=True
     )
     articles_albara = fields.One2many('registre_albarans.articles_albara', 'albara_id', string="Articles")
 

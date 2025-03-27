@@ -11,8 +11,8 @@
               <!-- Camps del formulari -->
               <field name="name"/>
               <field name="id_client"/>
-              <field name="id_reparation"/>
-              <field name="date"/>
+              <field name="id_reparacio"/>
+              <field name="data"/>
             </group>
             <group>
               <!-- Llistat d'articles dins del formulari -->
@@ -41,7 +41,7 @@
         <list>
           <field name="name"/>
           <field name="id_client"/>
-          <field name="date"/>
+          <field name="data"/>
         </list>
       </field>
     </record>
