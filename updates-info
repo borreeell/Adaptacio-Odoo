@@ -5,3 +5,4 @@ Update 4/3/2025:
 2. S'han organitzat millor els directoris (eliminat arxius que sobraven).
 3. Preparacio del directori i arxius de codi per el modul de factures.
 4. S'ha pujat l'arxiu compose de docker utilitzat per desplegar el programa
+5. S'ha acabat la programacio del modul factures i corregit errors en altres moduls
