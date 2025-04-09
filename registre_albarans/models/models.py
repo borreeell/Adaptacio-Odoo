@@ -1,7 +1,9 @@
+# -*- coding: utf-8 -*-
+
 from odoo import models, fields, api
 
 
-class Albara(models.Model):
+class DadesAlbara(models.Model):
     _name = 'registre_albarans.registre_albarans'
     _description = 'Albarans'
 
@@ -11,25 +13,32 @@ class Albara(models.Model):
         copy=False,
         readonly=True,
     )
+
     id_client = fields.Many2one(
         'gestio_clients.gestio_clients',
         string="ID del client",
     )
+
     id_reparacio = fields.Char(
         string="ID de la reparacio",
     )
+
     data = fields.Date(
         string="Data albara",
         default=fields.Date.context_today,
     )
-    articles_albara = fields.One2many('registre_albarans.articles_albara', 'albara_id', string="Articles")
+
+    articles_albara = fields.One2many(
+        'registre_albarans.articles_albara', 
+        'albara_id'
+    )
 
     @api.model
     def create(self, vals):
         if 'name' not in vals or not vals['name']:
             # Crida al metode next_by_code del model ir.sequence
             vals['name'] = self.env['ir.sequence'].next_by_code('registre_albarans.sequence') or '/'
-        return super(Albara, self).create(vals)
+        return super(DadesAlbara, self).create(vals)
     
 class ArticlesAlbara(models.Model):
     _name = 'registre_albarans.articles_albara'

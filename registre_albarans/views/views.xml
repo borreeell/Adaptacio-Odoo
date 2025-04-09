@@ -48,24 +48,26 @@
 
     <!-- Defincio de l'accio de finestra per les vistes de formulari i llista -->
     <record id="action_window" model="ir.actions.act_window">
-      <field name="name">List View</field>
-      <field name="res_model">registre_albarans.registre_albarans</field>
-      <field name="view_mode">list,form</field>
-    </record>
-
-    <!-- Definicio de l'accio de finestra per les vistes de servidor a llista -->
-    <record id="action_server" model="ir.actions.act_window">
-      <field name="name">Server to List</field>
+      <field name="name">Vista de llista</field>
       <field name="res_model">registre_albarans.registre_albarans</field>
       <field name="view_mode">list,form</field>
     </record>
 
     <!-- Elements del menu -->
     <menuitem name="Menu Albarans" id="registre_albarans.menu_root"/>
-    <menuitem name="registre_albarans" id="menu_registre_albarans" parent="registre_albarans.menu_root"/>
+
+    <menuitem 
+      name="registre_albarans" 
+      id="menu_registre_albarans" 
+      parent="registre_albarans.menu_root"
+    />
+
     <menuitem name="Menu 1" id="menu_1" parent="menu_registre_albarans"/>
-    <menuitem name="Menu 2" id="menu_2" parent="menu_registre_albarans"/>
-    <menuitem name="List" id="menu_1_list" parent="menu_1" action="registre_albarans.action_window"/>
-    <menuitem name="Server to list" id="menu_2_list" parent="menu_2" action="registre_albarans.action_server"/>
+    <menuitem 
+      name="List" 
+      id="menu_1_list" 
+      parent="menu_1" 
+      action="registre_albarans.action_window"
+    />
   </data>
 </odoo>

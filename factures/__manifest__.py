@@ -3,13 +3,13 @@
     'name': "factures",
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'gestio_clients'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',
+        'data/ir_sequence.xml',
     ],
 
     # only loaded in demonstration mode
