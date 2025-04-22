@@ -6,25 +6,6 @@
       <field name="model">factures.factures</field>
       <field name="arch" type="xml">
         <form string="Factures">
-          <header>
-            <!-- Botons segons estat -->
-            <button
-              name="action_validate"
-              string="Validar"
-              type="object"
-              class="btn-primary"
-              states="draft"
-            />
-
-            <button
-              name="action_paid"
-              string="Marcar com a pagada"
-              type="object"
-              class="btn-success"
-              states="validated"
-            />
-          </header>
-
           <sheet>
             <group>
               <!-- Camps formulari -->
@@ -72,7 +53,7 @@
     </record>
 
     <!-- Top menu item -->
-    <menuitem name="factures" id="factures.menu_root"/>
+    <menuitem name="Factures" id="factures.menu_root"/>
 
     <!-- menu categories -->
     <menuitem 

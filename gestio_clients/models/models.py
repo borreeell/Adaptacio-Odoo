@@ -6,6 +6,7 @@ import re
 class GestioClients(models.Model):
     _name = 'gestio_clients.gestio_clients'
     _description = 'Gestio Clients'
+    _rec_name = 'nom_client'
 
     individual = fields.Boolean(string='Individual', default = False)
     empresa = fields.Boolean(string='Empresa')
@@ -40,5 +41,3 @@ class GestioClients(models.Model):
             elif record.individual and record.nif:
                 if not re.match(r'^[A-Za-z]$', record.nif):
                     raise UserError("El NIF d'un particular ha d'acabar amb una lletra")
-
-    

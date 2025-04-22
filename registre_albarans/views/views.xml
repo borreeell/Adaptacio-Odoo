@@ -54,7 +54,7 @@
     </record>
 
     <!-- Elements del menu -->
-    <menuitem name="Menu Albarans" id="registre_albarans.menu_root"/>
+    <menuitem name="Albarans" id="registre_albarans.menu_root"/>
 
     <menuitem 
       name="registre_albarans" 
