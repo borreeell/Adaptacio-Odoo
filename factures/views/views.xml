@@ -55,18 +55,11 @@
     <!-- Top menu item -->
     <menuitem name="Factures" id="factures.menu_root"/>
 
-    <!-- menu categories -->
-    <menuitem 
-      name="Menu 1" 
-      id="factures.menu_1" 
-      parent="factures.menu_root"
-    />
-
     <!-- actions -->
-    <menuitem 
-      name="List" 
-      id="factures.menu_1_list" 
-      parent="factures.menu_1" 
+    <menuitem
+      name="Canvi de vista"
+      id="factures.menu_list"
+      parent="factures.menu_root"
       action="factures.action_window"
     />
   </data>

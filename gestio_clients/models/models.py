@@ -32,6 +32,7 @@ class GestioClients(models.Model):
         self.individual = not (self.empresa) # Desmarca empresa si esta marcada
         self.empresa = not (self.individual) # Desmarca individual si esta marcada
     
+    # TODO: Revisar funcio
     @api.constrains('nif', 'empresa', 'individual')
     def _comprova_nif(self):
         for record in self:
