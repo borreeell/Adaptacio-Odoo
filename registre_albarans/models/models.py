@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-
 from odoo import models, fields, api
-
 
 class DadesAlbara(models.Model):
     _name = 'registre_albarans.registre_albarans'
