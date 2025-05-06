@@ -57,30 +57,20 @@ class ArticlesFactura(models.Model):
         'factures.factures'
     )
 
-    id_article = fields.Char(
-        string="ID de l'article"
-    )
+    id_article = fields.Char(string="ID de l'article")
 
-    nom_article = fields.Char(
-        string="Nom de l'article"
-    )
+    nom_article = fields.Char(string="Nom de l'article")
 
-    quantitat = fields.Integer(
-        string="Quantitat"
-    )
+    quantitat = fields.Integer(string="Quantitat")
 
-    preu_unitari = fields.Float(
-        string="Preu unitari"
-    )
+    preu_unitari = fields.Float(string="Preu unitari")
 
     preu_subtotal = fields.Float(
         string="Preu subtotal",
         compute='_compute_preu_subtotal'
     )
 
-    percentatge_iva = fields.Float(
-        string="Percentatge IVA"
-    )
+    percentatge_iva = fields.Float(string="Percentatge IVA")
 
     preu_total = fields.Float(
         string="Preu total",
