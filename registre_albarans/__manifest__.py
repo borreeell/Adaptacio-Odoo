@@ -11,10 +11,6 @@
         'views/views.xml',
         'data/ir_sequence.xml',
     ],
-    # Nomes es carrega en mode demo
-    'demo': [
-        'demo/demo.xml',
-    ],
 
     'installable': True,
     'application': True,

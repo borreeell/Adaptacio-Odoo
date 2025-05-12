@@ -20,25 +20,28 @@ class GestioClients(models.Model):
     nif = fields.Char(string='NIF: ')
 
 
-    @api.model
-    def create(self, vals):
-        if 'id_client' not in vals or not vals['id_client']:
-            # Crida al metode next_by_code del model ir.sequence
-            vals['id_client'] = self.env['ir.sequence'].next_by_code('gestio.clients.sequence') or '/'
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if 'id_client' not in vals or not vals['id_client']:
+                # Crida al metode next_by_code del model ir.sequence
+                vals['id_client'] = self.env['ir.sequence'].next_by_code('gestio.clients.sequence') or '/'
         return super(GestioClients, self).create(vals)
 
     @api.onchange('individual', 'empresa')
     def _onchange_individual_empresa(self):
-        self.individual = not (self.empresa) # Desmarca empresa si esta marcada
-        self.empresa = not (self.individual) # Desmarca individual si esta marcada
+        self.individual = not (self.empresa) # Desmarca empresa si individual esta marcada
+        self.empresa = not (self.individual) # Desmarca individual si empresa esta marcada
     
     # TODO: Revisar funcio
     @api.constrains('nif', 'empresa', 'individual')
     def _comprova_nif(self):
         for record in self:
-            if record.empresa and record.nif:
+            if record.empresa:
+                # Validar que començi amb una lletra
                 if not re.match(r'^[A-Za-z]', record.nif):
                     raise UserError("El NIF d'una empresa ha de començar amb una lletra")
-            elif record.individual and record.nif:
-                if not re.match(r'^[A-Za-z]$', record.nif):
+            elif record.individual:
+                # Validar que acabi amb una lletra
+                if not re.search(r'^[A-Za-z]$', record.nif):
                     raise UserError("El NIF d'un particular ha d'acabar amb una lletra")

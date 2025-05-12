@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
+
 from odoo import models, fields, api
+
 
 class DadesAlbara(models.Model):
     _name = 'registre_albarans.registre_albarans'
@@ -31,7 +33,7 @@ class DadesAlbara(models.Model):
         'albara_id'
     )
 
-    @api.model
+    @api.model_create_multi
     def create(self, vals):
         if 'name' not in vals or not vals['name']:
             # Crida al metode next_by_code del model ir.sequence

@@ -6,6 +6,9 @@
       <field name="model">factures.factures</field>
       <field name="arch" type="xml">
         <form string="Factures">
+          <header>
+            <button name="%(action_report_factura)d" string="Imprimir Factura" type="action" class="btn-primary"/>
+          </header>
           <sheet>
             <group>
               <!-- Camps formulari -->

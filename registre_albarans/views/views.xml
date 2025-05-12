@@ -1,5 +1,6 @@
 <odoo>
   <data>
+    <!-- Definicio de la vista formulari per el modul -->
     <record id="view_albarans_form" model="ir.ui.view">
       <field name="name">registre_albarans.form</field>
       <field name="model">registre_albarans.registre_albarans</field>

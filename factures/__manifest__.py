@@ -3,22 +3,19 @@
     'name': "factures",
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'gestio_clients'],
+    'depends': ['base', 'gestio_clients', 'articles', 'web'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml',
+        'reports/report_factura.xml',
+        'views/factura_report.xml',
         'data/ir_sequence.xml',
-    ],
-
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
     ],
 
     'installable': True,
     'application': True,
-    'auto_install': True,
+    'auto_install': False,
 }
 

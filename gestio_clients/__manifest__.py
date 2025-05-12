@@ -12,11 +12,6 @@
         'data/ir_sequence.xml'
     ],
     
-    # Arxius que només es carreguen en mode de demostració
-    'demo': [
-        'demo/demo.xml',
-    ],
-    
     'application': True,
     'installable': True,
     'auto_install': False,
