@@ -1,9 +1,9 @@
 Dins d'aquest arxiu s'hi afegiran les patch-notes del que es vagi actualitzant.
 
-Update 4/3/2025:
 1. S'ha afegit validacio per el camp NIF al modul de gestio_clients.
 2. S'han organitzat millor els directoris (eliminat arxius que sobraven).
 3. Preparacio del directori i arxius de codi per el modul de factures.
 4. S'ha pujat l'arxiu compose de docker utilitzat per desplegar el programa
 5. S'ha acabat la programacio del modul factures i corregit errors en altres moduls
 6. S'ha afegit el modul d'articles i s'han corregit els errors en els altres moduls
+7. S'han afegit els arxius per extreure factures en PDF, i s'han corregit errors en els altres moduls
