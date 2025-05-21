@@ -30,8 +30,11 @@ class GestioClients(models.Model):
 
     @api.onchange('individual', 'empresa')
     def _onchange_individual_empresa(self):
-        self.individual = not (self.empresa) # Desmarca empresa si individual esta marcada
-        self.empresa = not (self.individual) # Desmarca individual si empresa esta marcada
+        if self.individual:
+            self.empresa = False
+        elif self.empresa:
+            self.individual = False
+
     
     @api.constrains('nif', 'empresa', 'individual')
     def _comprova_nif(self):
