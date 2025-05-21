@@ -27,4 +27,4 @@ class Articles(models.Model):
     @api.depends('preu_sense_iva', 'preu_total')
     def _compute_preu_total(self):
         for record in self:
-            record.preu_total = record.preu_sense_iva + 0.21
+            record.preu_total = record.preu_sense_iva * 1.21
