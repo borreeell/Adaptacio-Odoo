@@ -35,15 +35,15 @@ class GestioClients(models.Model):
         elif self.empresa:
             self.individual = False
 
-    
+
     @api.constrains('nif', 'empresa', 'individual')
     def _comprova_nif(self):
         for record in self:
+            nif = record.nif or ''
             if record.empresa:
-                # Validar que començi amb una lletra
-                if not re.match(r'^[A-Za-z]', record.nif):
+                if not re.match(r'^[A-Za-z]', nif):
                     raise UserError("El NIF d'una empresa ha de començar amb una lletra")
             elif record.individual:
-                # Validar que acabi amb una lletra
-                if not re.search(r'^[A-Za-z]$', record.nif):
+                if not re.search(r'[A-Za-z]$', nif):
                     raise UserError("El NIF d'un particular ha d'acabar amb una lletra")
+
